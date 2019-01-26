@@ -1,0 +1,9 @@
+F:\Projects\JobSeek\Webjet\Webjet\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+F:\Projects\JobSeek\Webjet\Webjet\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+F:\Projects\JobSeek\Webjet\Webjet\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.pdb
+F:\Projects\JobSeek\Webjet\Webjet\Domain\obj\Debug\netcoreapp2.1\Domain.csprojResolveAssemblyReference.cache

@@ -1,0 +1,11 @@
+F:\Projects\JobSeek\Webjet\Webjet\Repository\bin\Debug\netcoreapp2.1\Domain.dll
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.csprojResolveAssemblyReference.cache
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+F:\Projects\JobSeek\Webjet\Webjet\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+F:\Projects\JobSeek\Webjet\Webjet\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+F:\Projects\JobSeek\Webjet\Webjet\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+F:\Projects\JobSeek\Webjet\Webjet\Repository\bin\Debug\netcoreapp2.1\Domain.pdb
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+F:\Projects\JobSeek\Webjet\Webjet\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
