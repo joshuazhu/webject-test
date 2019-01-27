@@ -1,1 +1,6 @@
-Webjet/.vs/Webjet/v15/Server/sqlite3/storage.ide
+packages/*
+**/obj
+.vs/*
+**/bin
+bin/
+obj/

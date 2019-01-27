@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{3292FB5E-566B-4108-B27F-FB1BB1EAD319}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebjectTest", "WebjectTest\WebjectTest.csproj", "{668B11F9-E373-477B-8FD1-79BF936453D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Webjet", "Webjet\Webjet.csproj", "{7BC6014F-DB2F-4835-B42C-8754CCA4B3DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3292FB5E-566B-4108-B27F-FB1BB1EAD319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3292FB5E-566B-4108-B27F-FB1BB1EAD319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3292FB5E-566B-4108-B27F-FB1BB1EAD319}.Release|Any CPU.Build.0 = Release|Any CPU
-		{668B11F9-E373-477B-8FD1-79BF936453D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{668B11F9-E373-477B-8FD1-79BF936453D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{668B11F9-E373-477B-8FD1-79BF936453D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{668B11F9-E373-477B-8FD1-79BF936453D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC6014F-DB2F-4835-B42C-8754CCA4B3DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC6014F-DB2F-4835-B42C-8754CCA4B3DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC6014F-DB2F-4835-B42C-8754CCA4B3DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC6014F-DB2F-4835-B42C-8754CCA4B3DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

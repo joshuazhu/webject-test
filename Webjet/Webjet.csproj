@@ -24,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Webjet\Application\Application.csproj" />
-    <ProjectReference Include="..\..\Webjet\Domain\Domain.csproj" />
-    <ProjectReference Include="..\..\Webjet\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 </Project>
