@@ -1,6 +1,6 @@
 # Webject Movie Test
 
-Test is host on [Heroku](https://webjet-test.herokuapp.com/#!/login)
+Test is host on [https://webjet-test.herokuapp.com/](https://webjet-test.herokuapp.com/#!/login)
 
 As per [requirement](http://webjetapitest.azurewebsites.net/)
 
