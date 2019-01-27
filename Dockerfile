@@ -30,4 +30,4 @@ RUN dotnet publish -c Release -o /app
 FROM microsoft/dotnet:2.1-aspnetcore-runtime AS runtime
 WORKDIR /app
 COPY --from=publish /app .
-CMD ASPNETCORE_URLS=http://*:80 dotnet Webjet.dll
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet Webjet.dll
