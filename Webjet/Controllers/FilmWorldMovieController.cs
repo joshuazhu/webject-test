@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Application.Interface;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using WebjectTest.Models;
+using Webjet.Models;
 
-namespace WebjectTest.Controllers
+namespace Webjet.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace WebjectTest
+namespace Webjet
 {
     public class Program
     {

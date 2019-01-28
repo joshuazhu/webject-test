@@ -1,9 +1,9 @@
 ﻿using Application.Interface;
 using Application.Model;
 using Microsoft.AspNetCore.Mvc;
-using WebjectTest.Models;
+using Webjet.Models;
 
-namespace WebjectTest.Controllers
+namespace Webjet.Controllers
 {
     [Route("[controller]")]
     [ApiController]

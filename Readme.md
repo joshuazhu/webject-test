@@ -11,7 +11,7 @@ Password test
 ```
 
 <p align="center">
-  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webject-test/login.PNG">
+  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webjet-test/Login.PNG">
 </p>
 
 
@@ -22,5 +22,5 @@ Likewise, cinemaworld API has __1/4 chance__ not working and return empty result
 If API not returning result, movie information will be load from browser local storage to give users minimum viable display, but a warning message `Service currently not available, please try again` will be given to indicate the service is currently not available
 
 <p align="center">
-  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webject-test/Service+Not+Available.PNG">
+  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webjet-test/ServiceNotAvailable.PNG">
 </p>

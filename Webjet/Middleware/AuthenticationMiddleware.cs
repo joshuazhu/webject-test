@@ -2,7 +2,7 @@
 using Application.Interface;
 using Microsoft.AspNetCore.Http;
 
-namespace WebjectTest.Middleware
+namespace Webjet.Middleware
 {
     public class AuthenticationMiddleware
     {

@@ -1,4 +1,4 @@
-﻿namespace WebjectTest.Models
+﻿namespace Webjet.Models
 {
     public class ResponseViewModel<T>
     {

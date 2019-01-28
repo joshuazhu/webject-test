@@ -10,10 +10,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Repository;
 using Repository.Interface;
 using Swashbuckle.AspNetCore.Swagger;
-using WebjectTest.Middleware;
-using WebjectTest.Profile;
+using Webjet.Middleware;
+using Webjet.Profile;
 
-namespace WebjectTest
+namespace Webjet
 {
     public class Startup
     {

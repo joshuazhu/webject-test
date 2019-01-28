@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebjectTest.Models
+namespace Webjet.Models
 {
     public class MoviewViewModel
     {
