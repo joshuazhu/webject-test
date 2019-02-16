@@ -3,11 +3,11 @@
     $scope.loading = true;
 
     function findCheapMovie() {
-        //loop movies by date
+        //loop movies by title
         angular.forEach($scope.movies,
             function (movieData, key) {
                 var cheapMovie = null;
-                //loop movies in the same date
+                //loop movies in the same title
                 angular.forEach(movieData,
                     function (movie, key) {
                         if (!(movie && movie.price > 0))
