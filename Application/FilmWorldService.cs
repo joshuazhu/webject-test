@@ -1,44 +1,76 @@
-﻿using System;
+﻿using Application.Model;
+using Infrastructure.Interface;
+using Infrastructure.Model;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
-using Application.Exception;
-using Application.Interface;
-using Domain.Entity;
-using Repository.Interface;
+using System.Threading.Tasks;
 
 namespace Application
 {
-    public class FilmWorldService : IFilmWorldService
+    public class FilmWorldService : RemoteMovieService
     {
-        private IFilmWorldRepository _filmWorldRepository { get; set; }
+        private string _apiBaseUrl { get; }
+        private IMemoryCache _cache { get; }
+        private string cacheKey = "filmWorldMovies";
 
-        public FilmWorldService(IFilmWorldRepository fileFilmWorldRepository)
+        public FilmWorldService(IHttpClientService httpClientService, IMemoryCache cache, IOptions<AppSettings> appSettings) : base(httpClientService)
         {
-            _filmWorldRepository = fileFilmWorldRepository;
-        }
-
-        public IEnumerable<Movie> Get()
-        {
-            GenerateServiceNotAvailable();
-            return _filmWorldRepository.Get();
-        }
-
-        public Movie Get(Guid id)
-        {
-            GenerateServiceNotAvailable();
-            return _filmWorldRepository.Get(id);
+            _apiBaseUrl = appSettings.Value.ApiBaseUrl;
+            _cache = cache;
         }
 
         /// <summary>
-        /// Throw service not available exception in 1/4 chance
+        /// Retrieve movies from API, if API is not available, read movies from cache
         /// </summary>
-        private void GenerateServiceNotAvailable()
+        /// <returns></returns>
+        public override async Task<IEnumerable<RemoteMovieBrief>> Get()
         {
-            var random = new Random();
-            var randomNumber = random.Next(1, 5);
+            List<RemoteMovieBrief> movies;
 
-            if (randomNumber == 4)
-                throw new ServiceNotAvailableException("Film World is currently not available");
+            try
+            {
+                movies = (List<RemoteMovieBrief>) await base.Get();
+                _cache.Set(cacheKey, movies);
+            }
+            catch (System.Exception e)
+            {
+                movies = _cache.Get<List<RemoteMovieBrief>>(cacheKey);
+            }
 
+            return movies;
+        }
+
+        /// <summary>
+        /// Retrieve movie detail from API, if API is not available, read movie detail from cache
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public override async Task<RemoteMovieDetail> Get(string id)
+        {
+            RemoteMovieDetail remoteMovie;
+
+            try
+            {
+                remoteMovie = await base.Get(id);
+                _cache.Set($"{cacheKey}-{id}", remoteMovie);
+            }
+            catch (System.Exception e)
+            {
+                remoteMovie = _cache.Get<RemoteMovieDetail>($"{cacheKey}-{id}");
+            }
+
+            return remoteMovie;
+        }
+
+        public override string GetMovieUrl()
+        {
+            return $"{_apiBaseUrl}/filmworld/movies";
+        }
+
+        public override string GetMovieById(string id)
+        {
+            return $"{_apiBaseUrl}/filmworld/movie/{id}";
         }
     }
 }

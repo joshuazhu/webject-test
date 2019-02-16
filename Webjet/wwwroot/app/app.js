@@ -3,7 +3,7 @@
         $stateProvider
             .state('movies',
             {
-                url: '/movies/:userName',
+                url: '/movies',
                 templateUrl: 'app/views/movies/movies.html',
                 controller: 'MoviesCtrl'
             })
@@ -12,20 +12,13 @@
                 url: '/movie',
                 params: {
                     movieId: null,
-                    movieSource: null,
-                    userName: null
+                    movieSource: null
                 },
                 templateUrl: 'app/views/movies/movie.html',
                 controller: 'MovieCtrl'
             })
-            .state('login',
-            {
-                url: '/login',
-                templateUrl: 'app/views/login/login.html',
-                controller: 'LoginCtrl'
-            });
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/movies');
     });
 
 angular.

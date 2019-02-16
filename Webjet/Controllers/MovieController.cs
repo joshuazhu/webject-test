@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Application;
 using Application.Interface;
+using Application.Model;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Webjet.Models;
@@ -9,25 +12,25 @@ namespace Webjet.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FilmWorldMovieController : ControllerBase
+    public class MovieController : ControllerBase
     {
-        private IFilmWorldService _filmWorldService { get; set; }
+        private IMovieService _movieService { get; set; }
         private IMapper _mapper { get; set; }
 
-        public FilmWorldMovieController(IFilmWorldService filmWorldService, IMapper mapper)
+        public MovieController(IMovieService movieService, IMapper mapper)
         {
-            _filmWorldService = filmWorldService;
+            _movieService = movieService;
             _mapper = mapper;
         }
 
         [HttpGet("movies")]
-        public ActionResult<ResponseViewModel<List<MoviewViewModel>>> Get()
+        public async Task<ActionResult<ResponseViewModel<MovieGroupsByTitle>>> Get()
         {
             try
             {
-                var movies = _mapper.Map<List<MoviewViewModel>>(_filmWorldService.Get());
+                var movies = await _movieService.GetAllMovies();
 
-                return new ResponseViewModel<List<MoviewViewModel>>
+                return new ResponseViewModel<MovieGroupsByTitle>
                 {
                     Success = true,
                     Data = movies,
@@ -36,7 +39,7 @@ namespace Webjet.Controllers
             }
             catch (Exception e)
             {
-                return new ResponseViewModel<List<MoviewViewModel>>
+                return new ResponseViewModel<MovieGroupsByTitle>
                 {
                     Success = false,
                     Data = null,
@@ -45,14 +48,14 @@ namespace Webjet.Controllers
             }
         }
 
-        [HttpGet("movies/{id}")]
-        public ActionResult<ResponseViewModel<MoviewViewModel>> Get(Guid id)
+        [HttpGet("movies/{source}/{id}")]
+        public async Task<ActionResult<ResponseViewModel<MovieDetail>>> Get(int source, string id)
         {
             try
             {
-                var movie = _mapper.Map<MoviewViewModel>(_filmWorldService.Get(id));
+                var movie = await _movieService.GetMovieDetail(source, id);
 
-                return new ResponseViewModel<MoviewViewModel>
+                return new ResponseViewModel<MovieDetail>
                 {
                     Success = true,
                     Data = movie,
@@ -61,7 +64,7 @@ namespace Webjet.Controllers
             }
             catch (Exception e)
             {
-                return new ResponseViewModel<MoviewViewModel>
+                return new ResponseViewModel<MovieDetail>
                 {
                     Success = false,
                     Data = null,

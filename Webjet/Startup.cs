@@ -2,15 +2,15 @@ using Application;
 using Application.Interface;
 using Application.Profile;
 using AutoMapper;
+using Infrastructure;
+using Infrastructure.Interface;
+using Infrastructure.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Repository;
-using Repository.Interface;
 using Swashbuckle.AspNetCore.Swagger;
-using Webjet.Middleware;
 using Webjet.Profile;
 
 namespace Webjet
@@ -34,19 +34,18 @@ namespace Webjet
 
             var mappingConfig = new MapperConfiguration(x =>
             {
-                x.AddProfile(new ApplicationMappingProfile());
                 x.AddProfile(new WebjetMappingProfile());
+                x.AddProfile(new MappingProfile());
             });
 
-            services.AddSingleton(mappingConfig.CreateMapper());
-            services.AddSingleton<IUserService, UserService>();
-            services.AddSingleton<IAuthenticationService, AuthenticationService>();
-            services.AddSingleton<ICinemaWorldService, CinemaWorldService>();
-            services.AddSingleton<IFilmWorldService, FilmWorldService>();
+            services.AddMemoryCache();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
-            services.AddSingleton<ICinemaWorldRepository, CinemaWorldRepository>();
-            services.AddSingleton<IFilmWorldRepository, FilmWorldRepository>();
-            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton(mappingConfig.CreateMapper());
+            services.AddSingleton<IHttpClientService, HttpClientService>();
+            services.AddSingleton<CinemaWorldService>();
+            services.AddSingleton<FilmWorldService>();
+            services.AddSingleton<IMovieService, MovieService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -68,11 +67,6 @@ namespace Webjet
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie API");
-            });
-
-            app.UseWhen(context => context.Request.Path.StartsWithSegments("/api"), appBuilder =>
-            {
-                appBuilder.UseMiddleware<AuthenticationMiddleware>();
             });
 
             app.UseDefaultFiles();
