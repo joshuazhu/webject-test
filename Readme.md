@@ -2,8 +2,6 @@
 
 Test is host on [https://webjet-test.herokuapp.com/](https://webjet-test.herokuapp.com/#!/movies)
 
-As per [requirement](http://webjetapitest.azurewebsites.net/)
-
 # How to Handle when not all API functions 
 The web App is always trying to load movie information from API. If API is not functioning, then web App is going to load movie information from cache
 
