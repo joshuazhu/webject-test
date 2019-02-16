@@ -1,26 +1,12 @@
 # Webjet Movie Test
 
-Test is host on [https://webjet-test.herokuapp.com/](https://webjet-test.herokuapp.com/#!/login)
+Test is host on [https://webjet-test.herokuapp.com/](https://webjet-test.herokuapp.com/#!/movies)
 
 As per [requirement](http://webjetapitest.azurewebsites.net/)
 
-Login is required to get the access token. In here, please use the test account 
-```
-Username:test 
-Password test
-```
+# How to Handle when not all API functions 
+The web App is always trying to load movie information from API. If API is not functioning, then web App is going to load movie information from cache
 
-<p align="center">
-  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webjet-test/Login.PNG">
-</p>
+# How to get cheap price
+The logic of finding cheap price movie happens in client side angular App ```findCheapMovie()```. Which will compare the movies' price with the same Title and return the cheaper one
 
-
-As designed, filmworld API has __1/3 chance__ not working and return empty result. 
-
-Likewise, cinemaworld API has __1/4 chance__ not working and return empty result.
-
-If API not returning result, movie information will be load from browser local storage to give users minimum viable display, but a warning message `Service currently not available, please try again` will be given to indicate the service is currently not available
-
-<p align="center">
-  <img alt="VS Code in action" src="https://s3-ap-southeast-2.amazonaws.com/webjet-test/ServiceNotAvailable.PNG">
-</p>
