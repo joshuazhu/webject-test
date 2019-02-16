@@ -1,4 +1,4 @@
-# Webject Movie Test
+# Webjet Movie Test
 
 Test is host on [https://webjet-test.herokuapp.com/](https://webjet-test.herokuapp.com/#!/login)
 
